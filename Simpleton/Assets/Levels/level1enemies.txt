@@ -1,0 +1,6 @@
+# This file initializes and describes how the EnemySpawner will work
+
+# type		spawnRate(sec)		loc.xMin	loc.xMax	loc.yMin	loc.yMax	qty
+Enemy		0.1					100			1820		-10			-10			500
+Enemy2		0.2					960			960			-10			-10			250
+Boss		1.0				960			960			150			150			1

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{488D80E5-E2EA-4339-B24A-79138C5F78B2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Simpleton</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Build\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\External\SDL\Includes</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DisableSpecificWarnings>4100;4481;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\External\SDL\Libs\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Application.cpp" />
+    <ClCompile Include="Core\BoxCollider.cpp" />
+    <ClCompile Include="Core\PartitionCell.cpp" />
+    <ClCompile Include="Core\CircleCollider.cpp" />
+    <ClCompile Include="Core\Collider.cpp" />
+    <ClCompile Include="Core\CollisionQuadTree.cpp" />
+    <ClCompile Include="Core\CollisionSystem.cpp" />
+    <ClCompile Include="Core\GameObject.cpp" />
+    <ClCompile Include="Core\Graphics.cpp" />
+    <ClCompile Include="Core\ImageLoader.cpp" />
+    <ClCompile Include="Core\Input.cpp" />
+    <ClCompile Include="Core\MapData.cpp" />
+    <ClCompile Include="Core\Sprite.cpp" />
+    <ClCompile Include="Core\Text.cpp" />
+    <ClCompile Include="Core\TextureManager.cpp" />
+    <ClCompile Include="Core\Texture.cpp" />
+    <ClCompile Include="Core\Timer.cpp" />
+    <ClCompile Include="Core\Transform.cpp" />
+    <ClCompile Include="Game\Background.cpp" />
+    <ClCompile Include="Game\Boss.cpp" />
+    <ClCompile Include="Game\Bullet.cpp" />
+    <ClCompile Include="Game\BulletFactory.cpp" />
+    <ClCompile Include="Game\BulletSite.cpp" />
+    <ClCompile Include="Game\Enemy.cpp" />
+    <ClCompile Include="Game\Enemy2.cpp" />
+    <ClCompile Include="Game\EnemySpawner.cpp" />
+    <ClCompile Include="Game\GameManager.cpp" />
+    <ClCompile Include="Game\Missile.cpp" />
+    <ClCompile Include="Game\MissileFactory.cpp" />
+    <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Game\UIScore.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Math\Math.cpp" />
+    <ClCompile Include="Math\Rect.cpp" />
+    <ClCompile Include="Math\Vector2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\AnimationState.h" />
+    <ClInclude Include="Core\Application.h" />
+    <ClInclude Include="Core\BoxCollider.h" />
+    <ClInclude Include="Core\PartitionCell.h" />
+    <ClInclude Include="Core\CircleCollider.h" />
+    <ClInclude Include="Core\Collider.h" />
+    <ClInclude Include="Core\CollisionQuadTree.h" />
+    <ClInclude Include="Core\CollisionSystem.h" />
+    <ClInclude Include="Core\Component.h" />
+    <ClInclude Include="Core\GameObject.h" />
+    <ClInclude Include="Core\Graphics.h" />
+    <ClInclude Include="Core\ImageLoader.h" />
+    <ClInclude Include="Core\Input.h" />
+    <ClInclude Include="Core\InputTypes.h" />
+    <ClInclude Include="Core\MapData.h" />
+    <ClInclude Include="Core\Sprite.h" />
+    <ClInclude Include="Core\Text.h" />
+    <ClInclude Include="Core\TextureManager.h" />
+    <ClInclude Include="Core\Texture.h" />
+    <ClInclude Include="Core\Timer.h" />
+    <ClInclude Include="Core\Transform.h" />
+    <ClInclude Include="Game\Background.h" />
+    <ClInclude Include="Game\Boss.h" />
+    <ClInclude Include="Game\Bullet.h" />
+    <ClInclude Include="Game\BulletFactory.h" />
+    <ClInclude Include="Game\BulletSite.h" />
+    <ClInclude Include="Game\Enemy.h" />
+    <ClInclude Include="Game\Enemy2.h" />
+    <ClInclude Include="Game\EnemySpawner.h" />
+    <ClInclude Include="Game\GameManager.h" />
+    <ClInclude Include="Game\Missile.h" />
+    <ClInclude Include="Game\MissileFactory.h" />
+    <ClInclude Include="Game\Player.h" />
+    <ClInclude Include="Game\UIScore.h" />
+    <ClInclude Include="Math\Circle.h" />
+    <ClInclude Include="Math\Line.h" />
+    <ClInclude Include="Math\Math.h" />
+    <ClInclude Include="Math\Rect.h" />
+    <ClInclude Include="Math\Vector2.h" />
+    <ClInclude Include="Utilities\Heap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Assets\Images\boss.png" />
+    <None Include="..\..\Assets\Images\bullet.png" />
+    <None Include="..\..\Assets\Images\enemy1.png" />
+    <None Include="..\..\Assets\Images\enemy2.png" />
+    <None Include="..\..\Assets\Images\ship.png" />
+    <None Include="..\..\Assets\Images\tileset1.png" />
+    <None Include="..\..\Assets\Levels\level1enemies.txt" />
+    <None Include="..\..\Assets\Maps\map1.txt" />
+    <None Include="Utilities\Heap.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
